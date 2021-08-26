@@ -23,3 +23,22 @@ body {
     text-align: center;
     background-color: #00000080;
 }
+
+.title {
+    font-size: calc(10px + 2vw);
+}
+
+.title p {
+    font-size: calc(8px + 1vw);
+}
+
+.countdown {
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+}
+
+.countdown h1 {
+    font-size: calc(8px + 4vw);
+    text-shadow: 0 0 10px whitesmoke;
+}
