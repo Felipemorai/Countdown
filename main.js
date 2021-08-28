@@ -1,5 +1,11 @@
 'use strict';
 
+const update = (time) => {
+    const seconds = document.getElementById('seconds');
+
+    seconds.textContent = time;
+}
+
 const countDown = (time) => {
     const stopCount = () => clearInterval(id);
     
@@ -7,7 +13,7 @@ const countDown = (time) => {
         if (time === 0 ) {
             stopCount();
         }
-        console.log (time);
+        update (time);
         time--;
     }
     const id = setInterval(count,1000);

@@ -40,7 +40,7 @@ body {
 }
 
 .countdown h1 {
-    font-size: calc(8px + 4vw);
+    font-size: calc(10px + 4vw);
     text-shadow: 0 0 10px whitesmoke;
 }
 
