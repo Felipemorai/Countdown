@@ -9,10 +9,12 @@ const update = (time) => {
     const days = document.getElementById('days');
 
     const qtdSeconds = time % 60;
-    const qtdMinutes = time % (60 * 60);
+    const qtdMinutes = Math.floor((time % (60 * 60)) / 60);
+    const qtdHours = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
 
     seconds.textContent = formatDigit(qtdSeconds);
     minutes.textContent = formatDigit(qtdMinutes);
+    hours.textContent = formatDigit(qtdHours);
 }
 
 const countDown = (time) => {
@@ -28,4 +30,4 @@ const countDown = (time) => {
     const id = setInterval(count,1000);
 }
 
-countDown(92);
+countDown(11200);
