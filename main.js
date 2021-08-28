@@ -1,9 +1,18 @@
 'use strict';
 
+const formatDigit = (digit) => `0${digit}`.slice(-2);
+
 const update = (time) => {
     const seconds = document.getElementById('seconds');
+    const minutes = document.getElementById('minutes');
+    const hours = document.getElementById('hours');
+    const days = document.getElementById('days');
 
-    seconds.textContent = time;
+    const qtdSeconds = time % 60;
+    const qtdMinutes = time % (60 * 60);
+
+    seconds.textContent = formatDigit(qtdSeconds);
+    minutes.textContent = formatDigit(qtdMinutes);
 }
 
 const countDown = (time) => {
@@ -19,4 +28,4 @@ const countDown = (time) => {
     const id = setInterval(count,1000);
 }
 
-countDown(5);
+countDown(92);
