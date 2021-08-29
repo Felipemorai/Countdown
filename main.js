@@ -11,10 +11,12 @@ const update = (time) => {
     const qtdSeconds = time % 60;
     const qtdMinutes = Math.floor((time % (60 * 60)) / 60);
     const qtdHours = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
+    const qtdDays = Math.floor(time / (60 * 60 * 24));
 
     seconds.textContent = formatDigit(qtdSeconds);
     minutes.textContent = formatDigit(qtdMinutes);
     hours.textContent = formatDigit(qtdHours);
+    days.textContent = formatDigit(qtdDays);
 }
 
 const countDown = (time) => {
@@ -30,4 +32,10 @@ const countDown = (time) => {
     const id = setInterval(count,1000);
 }
 
-countDown(11200);
+const timeLeft = () => {
+    const dataEvent = new Date ('2021-08-31 20:00:00');
+    const today = Date.now();
+    return Math.floor((dataEvent - today) / 1000);
+}
+
+countDown(timeLeft());
